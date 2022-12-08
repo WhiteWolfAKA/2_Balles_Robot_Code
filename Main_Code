@@ -1,0 +1,237 @@
+
+//____________________________PING PONG__________________________
+//_________________________________________________________________
+#include <Servo.h>
+
+Servo servo1;
+Servo servo2;
+Servo servo3;
+Servo servo4;
+
+
+void setup() {
+  // put your setup code here, to run once:
+
+  servo1.attach(12); // Base Tournante ----------------------------
+  servo1.write(90);    // MISE À SA ZERO (POSITION DE DÉPART)
+  
+
+  servo2.attach(11); // Bras Bas ----------------------------------
+  servo2.write(180);    // MISE À SA ZERO (POSITION DE DÉPART)
+  
+
+  servo3.attach(10); // Bras Haut ---------------------------------
+  servo3.write(0);    // MISE À SA ZERO (POSITION DE DÉPART)
+  
+
+  servo4.attach(9); // Pinces -------------------------------------
+  servo4.write(90 + 10);    // MISE À SA ZERO (POSITION DE DÉPART)
+  
+  delay(5000);
+
+  
+
+}
+
+
+int angle1 = 90;
+int angle2 = 180;
+int angle3 = 0;
+int angle4 = 90 + 10;
+
+
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+
+   for(angle1; angle1 > 35; angle1--)    //BASE
+  {                                
+    servo1.write(angle1);           
+    delay(10);       
+  } 
+
+  
+  for(angle2; angle2 > 130; angle2--)   // basbras 
+  {                                
+    servo2.write(angle2);           
+    delay(30);       
+  } 
+
+
+    for(angle3; angle3 < 80; angle3++)   // hautbras
+  {                                  
+    servo3.write(angle3);               
+    delay(50);                   
+  } 
+
+
+  
+  for(angle2; angle2 > 95; angle2--)   // basbras 
+  {                                
+    servo2.write(angle2);           
+    delay(30);       
+  }
+
+  
+
+    for(angle3; angle3 < 90; angle3++)   // hautbras
+  {                                  
+    servo3.write(angle3);               
+    delay(50);                   
+  } 
+
+
+
+//   for(angle4; angle4 < 107; angle4++)   // CLOSE claw
+//  {                                  
+//    servo4.write(angle4);               
+//    delay(25);                   
+//  } 
+//
+//  delay(1000);    // Time spent CLOSED
+
+  
+  
+  for(angle4; angle4 > 10; angle4--)    // OPEN claw
+  {                                
+    servo4.write(angle4);           
+    delay(25);       
+  } 
+
+
+
+  for(angle3; angle3 > 0; angle3--)    // hautbras
+  {                                
+    servo3.write(angle3);         
+    delay(30);       
+  } 
+
+  delay(2000);
+
+
+
+  for(angle2; angle2 < 180; angle2++)   // basbras 
+  {                                  
+    servo2.write(angle2);               
+    delay(10);                   
+  } 
+
+  delay(2000);
+
+
+   for(angle1; angle1 < 90; angle1++)   // BASE
+  {                                  
+    servo1.write(angle1);               
+    delay(10);                   
+  } 
+
+  delay(1000);
+
+   
+
+}
+
+
+
+
+
+//________________________________BALLE GOLF___________________________
+//_____________________________________________________________________
+#include <Servo.h>
+
+Servo servo1;
+Servo servo2;
+Servo servo3;
+Servo servo4;
+
+
+void setup() {
+  // put your setup code here, to run once:
+
+  servo1.attach(12); // Base Tournante ----------------------------
+  servo1.write(90);    // MISE À SA ZERO (POSITION DE DÉPART)
+  
+
+  servo2.attach(11); // Bras Bas ----------------------------------
+  servo2.write(180);    // MISE À SA ZERO (POSITION DE DÉPART)
+  
+
+  servo3.attach(10); // Bras Haut ---------------------------------
+  servo3.write(0);    // MISE À SA ZERO (POSITION DE DÉPART)
+  
+
+  servo4.attach(9); // Pinces -------------------------------------
+  servo4.write(0);    // MISE À SA ZERO (POSITION DE DÉPART)
+  
+  delay(5000);
+
+}
+
+
+int angle1 = 90;
+int angle2 = 180;
+int angle3 = 0;
+int angle4 = 10;
+
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  for(angle4; angle4 > 10; angle4--)    // OPEN claw
+  {                                
+    servo4.write(angle4);           
+    delay(25);       
+  } 
+
+
+   for(angle3; angle3 < 10; angle3++)   // hautbras
+  {                                  
+    servo3.write(angle3);               
+    delay(30);                   
+  } 
+
+
+   for(angle2; angle2 > 133; angle2--)   // basbras 
+  {                                
+    servo2.write(angle2);           
+    delay(30);       
+  }
+
+
+
+  for(angle4; angle4 < 100; angle4++)   // CLOSE claw
+  {                                  
+    servo4.write(angle4);               
+    delay(45);                   
+  } 
+
+  delay(1000);    // Time spent CLOSED
+
+
+  for(angle2; angle2 < 180; angle2++)   // basbras 
+  {                                  
+    servo2.write(angle2);               
+    delay(20);                   
+  } 
+
+  delay(2000);
+
+  for(angle3; angle3 > 0; angle3--)    // hautbras
+  {                                
+    servo3.write(angle3);         
+    delay(20);       
+  } 
+
+  delay(2000);
+
+
+
+  
+
+}
+
+
+
